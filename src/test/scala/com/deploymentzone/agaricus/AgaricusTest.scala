@@ -1,9 +1,5 @@
 package com.deploymentzone.agaricus
 
-/**
- * A simple test for everyone's favourite wordcount example.
- */
-
 import com.holdenkarau.spark.testing.SharedSparkContext
 import org.scalatest.FunSuite
 

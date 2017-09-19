@@ -10,9 +10,11 @@ import scala.collection.JavaConverters._
 
 object Data {
 
-  def apply(): List[String] =
-    GZippedByteSource(Resources.asByteSource(Resources.getResource("agaricus-lepiota.data.gz")))
+  def apply(): List[String] ={
+    val url = Data.getClass.getClassLoader.getResource("agaricus-lepiota.data.gz")
+    GZippedByteSource(Resources.asByteSource(url))
       .asCharSource(Charset.defaultCharset()).readLines().iterator().asScala.toList
+  }
 
 
   private case class GZippedByteSource(gzippedSource: ByteSource) extends ByteSource {
