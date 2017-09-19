@@ -1,4 +1,3 @@
-// give the user a nice default project!
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -15,7 +14,8 @@ lazy val root = (project in file(".")).
     coverageHighlighting := true,
     javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:MaxPermSize=2048M", "-XX:+CMSClassUnloadingEnabled"),
     libraryDependencies ++= Seq(
-      // Test your code PLEASE!!!
+      "com.google.guava" % "guava" % "23.0",
+      "me.lessis" %% "guavapants" % "0.1.1",
       "org.scalatest" %% "scalatest" % "3.0.1" % "test",
       "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
       "com.holdenkarau" %% "spark-testing-base" % "2.2.0_0.7.2" % "test"),
@@ -25,6 +25,7 @@ lazy val root = (project in file(".")).
       "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/",
       "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
       "Second Typesafe repo" at "http://repo.typesafe.com/typesafe/maven-releases/",
+      "softprops-maven" at "http://dl.bintray.com/content/softprops/maven",
       Resolver.sonatypeRepo("public")
     ),
     // publish settings
