@@ -10,7 +10,7 @@ import scala.collection.JavaConverters._
 
 object Data {
 
-  def apply(): List[String] ={
+  def apply(): List[String] = {
     val url = Data.getClass.getClassLoader.getResource("agaricus-lepiota.data.gz")
     GZippedByteSource(Resources.asByteSource(url))
       .asCharSource(Charset.defaultCharset()).readLines().iterator().asScala.toList

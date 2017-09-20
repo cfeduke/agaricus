@@ -48,4 +48,8 @@ class AttributesTest extends FunSuite {
         assert(true)
     }
   }
+
+  test("all of the attributes parse from the resource attributes.txt file") {
+    assert(Attributes.apply().length == 22)
+  }
 }
