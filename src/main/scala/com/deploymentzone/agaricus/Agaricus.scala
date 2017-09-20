@@ -32,7 +32,7 @@ object Agaricus {
       row => (row.getDouble(0), row.getDouble(1))
     }.rdd)
 
-    print(f"Model Accuracy: ${metrics.accuracy}%2.2f")
+    println(f"Model Accuracy: ${metrics.accuracy * 100.0}%2.2f%%")
 
     model
   }
